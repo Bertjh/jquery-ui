@@ -239,6 +239,9 @@ $.widget("ui.sortable", $.ui.mouse, {
 	},
 
 	_mouseDrag: function(event) {
+		
+		//Re-initialize scrollParent, due to connectWith
+		this.scrollParent = this.placeholder.scrollParent();
 
 		//Compute the helpers position
 		this.position = this._generatePosition(event);
